@@ -13,6 +13,11 @@ def get_max_calories():
     return max
 
 
+def get_max_calories_listcomp():
+    return max([sum(map(int, item.split())) for item in open("input1.txt").read().strip().split("\n\n") if item is not ""])
+def get_top_three_listcomp():
+    return sum(sorted([sum(map(int, item.split())) for item in open("input1.txt").read().strip().split("\n\n") if item is not ""])[-3:])
+
 def get_top_three():
     file = open("input1.txt")
     data = file.read().split("\n")
@@ -33,3 +38,5 @@ def get_top_three():
 
 print(get_max_calories())
 print(get_top_three())
+print(get_max_calories_listcomp())
+print(get_top_three_listcomp())
